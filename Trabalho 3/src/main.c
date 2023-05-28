@@ -14,7 +14,7 @@ int main() {
         addEdge(graph, src, dest);
     }
 
-    // Get the number os strongly connected components and store all of them in a matrix
+    // Get the number of strongly connected components and store all of them in a matrix
     int** strongly_connected_components = (int**)malloc(num_vertices * sizeof(int*));
     if (strongly_connected_components == NULL) {
         fprintf(stderr, "Error: Memory allocation failed for the strongly_connected_components array\n");

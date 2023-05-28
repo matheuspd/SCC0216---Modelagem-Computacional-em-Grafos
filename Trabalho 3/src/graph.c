@@ -196,12 +196,14 @@ void printComponents(int** strongly_connected_components, int num_components) {
 }
 
 // Sort the strongly connected components
-void sortComponents(int** strongly_connected_components, int num_components) {   
+void sortComponents(int** strongly_connected_components, int num_components) {
+    // Sort the components in ascending order 
     for (int i = 0; i < num_components; i++) {
         int* component = strongly_connected_components[i];
-        int j;
-        for (j = 0; component[j] != -1; j++) {}
+        int j = 0;
+        while (component[j] != -1) j++;
         qsort(component, j, sizeof(int), compareIntegers);
     }
+    // Sort the arrays of components to show first the components that start with lower vertex values
     qsort(strongly_connected_components, num_components, sizeof(int*), compareComponents);
 }
